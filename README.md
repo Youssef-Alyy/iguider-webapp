@@ -39,5 +39,5 @@ To run the project locally, clone the repository and follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Youssef-Alyy/iguider.git
+   git clone https://github.com/Youssef-Alyy/iguider-webapp.git
    ```
