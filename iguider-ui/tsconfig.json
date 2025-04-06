@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"strictNullChecks": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"src/app/page.tsx",
+		"src/components/Footer.tsx",
+		"src/app/login/page.tsx",
+		"tailwind.config.ts",
+		"src/app/upload/Layout.jsx",
+		"src/app/upload/upload"
+	],
+	"exclude": ["node_modules"]
+}

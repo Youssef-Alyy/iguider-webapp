@@ -1,0 +1,34 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+pydantic = "*"
+pymongo = "*"
+gunicorn = "*"
+python-jose = "*"
+python-multipart = "*"
+passlib = "*"
+pyjwt = "*"
+motor = "*"
+beanie = "*"
+pydantic-settings = "*"
+uuid = "*"
+pytest = "*"
+httpx = "*"
+fastapi-mail = "*"
+redis = "*"
+celery="*"
+python-dotenv = "*"
+email-validator = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-mock = "*"
+pytest-asyncio = "*"
+
+[requires]
+python_version = "3.12"

@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 212.7 26.8% 83.9%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideOutUp {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-100%);
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.slide-in-down {
+	animation: slideInDown 1s ease-out forwards,
+		slideOutUp 1s ease-out 3s forwards;
+}
+
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+}
+
+.loader .dot {
+	width: 15px;
+	height: 15px;
+	margin: 0 5px;
+	background-color: #6366f1;
+	border-radius: 50%;
+	animation: bounce 1.4s infinite both;
+}
+
+.loader .dot:nth-child(1) {
+	animation-delay: -0.32s;
+}
+
+.loader .dot:nth-child(2) {
+	animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+	0%,
+	80%,
+	100% {
+		transform: scale(0);
+	}
+
+	40% {
+		transform: scale(1);
+	}
+}
+
+.cookie-popup {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 15px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: none;
+	z-index: 1000;
+	max-width: 400px;
+}
+
+.cookie-popup.show {
+	display: block;
+}
+
+.cookie-icon {
+	font-size: 30px;
+	color: #6f42c1;
+	/* Purple color */
+	margin-bottom: 10px;
+}
+
+.cookie-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.cookie-link {
+	color: #6f42c1;
+	/* Purple color */
+	text-decoration: none;
+	word-break: break-word;
+}
+
+.cookie-link:hover {
+	text-decoration: underline;
+}
+
+.cookie-buttons {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.cookie-button {
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 14px;
+	cursor: pointer;
+	margin: 0 5px;
+}
+
+.cookie-button.decline {
+	background-color: #fff;
+	color: #6f42c1;
+	/* Purple color */
+	border: 1px solid #6f42c1;
+	/* Purple color */
+}
+
+.cookie-button.decline:hover {
+	background-color: #f8f9fa;
+}
+
+.cookie-button.accept {
+	background-color: #6f42c1;
+	/* Purple color */
+	color: white;
+}
+
+.cookie-button.accept:hover {
+	background-color: #5a2a8d;
+	/* Darker purple */
+}
+
+
+@keyframes slowSpin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.slowSpin {
+	animation: slowSpin 3s linear infinite;
+}
